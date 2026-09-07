@@ -1,0 +1,297 @@
+<svg viewBox="0 0 2000 1170" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/>
+    </marker>
+  </defs>
+  <style>
+    .h{font-size:15px;font-weight:600;fill:#64748b;letter-spacing:3px}
+    .bt{font-size:14.5px;font-weight:600;fill:#1e293b}
+    .bd{font-size:11.5px;fill:#475569}
+    .lbl{font-size:10px;fill:#64748b}
+    .pill{font-size:8.5px;font-weight:700;fill:#334155;text-anchor:middle}
+    .a{fill:none;stroke:#475569;stroke-width:1.8}
+    .at{fill:none;stroke:#0d9488;stroke-width:1.8;stroke-dasharray:6 4}
+  </style>
+
+  <rect x="0" y="0" width="2000" height="1170" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="40" y="48" font-size="24" font-weight="700" fill="#0f172a">Absorbd: How Patient Information Becomes a Grounded Nutrition Protocol</text>
+  <text x="40" y="74" font-size="13" fill="#64748b">Where information enters, how it travels through every agent and system, and what comes out</text>
+
+  <!-- Column headers -->
+  <text x="40" y="108" class="h">INPUTS</text>
+  <text x="430" y="108" class="h">PROCESSING</text>
+  <text x="1660" y="108" class="h">OUTPUTS</text>
+  <text x="1135" y="112" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7c3aed" letter-spacing="1">GROUNDED REASONING PIPELINE · AGENTS 3-5 RUN IN PARALLEL · EVERY STEP STREAMS LIVE TO THE UI</text>
+
+  <!-- ============ INPUTS ============ -->
+  <rect x="40" y="125" width="320" height="115" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="56" y="150" class="bt">Doctor input</text>
+  <text x="56" y="172" class="bd">Creates the patient profile:</text>
+  <text x="56" y="188" class="bd">condition (UC, Crohn's, celiac),</text>
+  <text x="56" y="204" class="bd">medications, symptoms to watch,</text>
+  <text x="56" y="220" class="bd">dietary restrictions, notes</text>
+
+  <rect x="40" y="265" width="320" height="100" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="56" y="290" class="bt">Lab document upload</text>
+  <text x="56" y="312" class="bd">Doctor or patient uploads lab and</text>
+  <text x="56" y="328" class="bd">clinical PDFs (11 document types)</text>
+
+  <rect x="40" y="450" width="320" height="115" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="56" y="475" class="bt">Patient daily journal</text>
+  <text x="56" y="497" class="bd">Conversational check-in chat</text>
+  <text x="56" y="513" class="bd">(LLM-guided): symptoms, meds</text>
+  <text x="56" y="529" class="bd">taken or missed, food, sleep,</text>
+  <text x="56" y="545" class="bd">stool, stress, exercise, notes</text>
+  <text x="56" y="561" class="bd" font-style="italic">(linked via 6-char access code)</text>
+
+  <rect x="40" y="750" width="320" height="115" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="56" y="775" class="bt">Clinical knowledge base</text>
+  <text x="56" y="797" class="bd">Built offline, one time:</text>
+  <text x="56" y="813" class="bd">NIH nutrient fact sheets,</text>
+  <text x="56" y="829" class="bd">FDA drug labels, and</text>
+  <text x="56" y="845" class="bd">peer-reviewed IBD research studies</text>
+
+  <!-- ============ STORAGE COLUMN ============ -->
+  <!-- Lab ingestion -->
+  <rect x="430" y="230" width="270" height="190" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="446" y="252" class="bt">Lab ingestion</text>
+  <rect x="445" y="264" width="240" height="26" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="565" y="281" font-size="10.5" fill="#475569" text-anchor="middle">PDF text extraction (pdfplumber)</text>
+  <text x="565" y="303" font-size="9" fill="#94a3b8" text-anchor="middle">&#9660;</text>
+  <rect x="445" y="308" width="240" height="26" rx="6" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="565" y="325" font-size="10.5" fill="#475569" text-anchor="middle">LLM extracts lab values</text>
+  <text x="565" y="345" font-size="9" fill="#94a3b8" text-anchor="middle">&#9660;</text>
+  <rect x="445" y="350" width="240" height="26" rx="6" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="565" y="367" font-size="10.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">Doctor confirmation gate</text>
+  <text x="565" y="387" font-size="9" fill="#94a3b8" text-anchor="middle">&#9660;</text>
+  <rect x="445" y="390" width="240" height="26" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="565" y="407" font-size="10.5" fill="#475569" text-anchor="middle">confirmed values only proceed</text>
+
+  <!-- SQLite -->
+  <rect x="430" y="470" width="270" height="110" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="446" y="494" class="bt">SQLite database</text>
+  <text x="446" y="516" class="bd">Patient profiles · confirmed lab</text>
+  <text x="446" y="532" class="bd">values · journal entries ·</text>
+  <text x="446" y="548" class="bd">document records</text>
+
+  <!-- Foundry IQ -->
+  <rect x="430" y="700" width="270" height="200" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text x="446" y="726" class="bt">Foundry IQ · Knowledge Retrieval</text>
+  <text x="446" y="744" font-size="9" font-weight="700" fill="#0d9488" letter-spacing="2">GROUNDING LAYER</text>
+  <text x="446" y="766" class="bd">Azure AI Search agentic retrieval.</text>
+  <text x="446" y="782" class="bd">Every query blends general clinical</text>
+  <text x="446" y="798" class="bd">literature with this patient's own</text>
+  <text x="446" y="814" class="bd">documents (per-patient filter).</text>
+  <text x="446" y="840" class="bd">Contains: NIH fact sheets, FDA drug</text>
+  <text x="446" y="856" class="bd">labels, IBD studies, patient docs</text>
+  <text x="446" y="882" font-size="11.5" font-weight="700" fill="#0d9488">&#9733; Cite evidence or refuse to answer</text>
+
+  <!-- ============ PREP + TRIO ============ -->
+  <rect x="760" y="120" width="360" height="110" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="776" y="144" class="bt">Profile Preparation</text>
+  <text x="776" y="166" class="bd">Merges profile + confirmed labs + latest</text>
+  <text x="776" y="182" class="bd">journal symptoms · normalizes brand to</text>
+  <text x="776" y="198" class="bd">generic meds · flags active inflammation</text>
+  <text x="776" y="214" class="bd">(CRP, calprotectin)</text>
+
+  <text x="830" y="258" font-size="11" font-weight="700" fill="#dc2626">&#9733; VERIFY drops any claim its citations don't support</text>
+
+  <!-- Agent 3 -->
+  <rect x="760" y="270" width="360" height="140" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="776" y="294" class="bt">Agent 3 · Deficiency Hypothesis</text>
+  <text x="776" y="316" class="bd">Condition + symptoms + confirmed labs</text>
+  <text x="776" y="332" class="bd">produce ranked deficiency candidates</text>
+  <rect x="788" y="368" width="48" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="812" y="384" class="pill">PLAN</text>
+  <rect x="840" y="368" width="66" height="24" rx="12" fill="#ccfbf1" stroke="#0d9488"/><text x="873" y="384" class="pill">RETRIEVE</text>
+  <rect x="910" y="368" width="62" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="941" y="384" class="pill">ANALYZE</text>
+  <rect x="976" y="368" width="56" height="24" rx="12" fill="#fee2e2" stroke="#dc2626"/><text x="1004" y="384" class="pill">VERIFY</text>
+  <rect x="1036" y="368" width="68" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="1070" y="384" class="pill">CONCLUDE</text>
+
+  <!-- Agent 4 -->
+  <rect x="760" y="440" width="360" height="140" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="776" y="464" class="bt">Agent 4 · Medication Interaction</text>
+  <text x="776" y="486" class="bd">Each medication is checked for drug-</text>
+  <text x="776" y="502" class="bd">nutrient depletion (prednisone: Ca, vit D)</text>
+  <rect x="788" y="538" width="48" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="812" y="554" class="pill">PLAN</text>
+  <rect x="840" y="538" width="66" height="24" rx="12" fill="#ccfbf1" stroke="#0d9488"/><text x="873" y="554" class="pill">RETRIEVE</text>
+  <rect x="910" y="538" width="62" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="941" y="554" class="pill">ANALYZE</text>
+  <rect x="976" y="538" width="56" height="24" rx="12" fill="#fee2e2" stroke="#dc2626"/><text x="1004" y="554" class="pill">VERIFY</text>
+  <rect x="1036" y="538" width="68" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="1070" y="554" class="pill">CONCLUDE</text>
+
+  <!-- Agent 5 -->
+  <rect x="760" y="610" width="360" height="140" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="776" y="634" class="bt">Agent 5 · Dietary Gap</text>
+  <text x="776" y="656" class="bd">Each dietary restriction maps to likely</text>
+  <text x="776" y="672" class="bd">nutrient gaps (vegan: B12, iron)</text>
+  <rect x="788" y="708" width="48" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="812" y="724" class="pill">PLAN</text>
+  <rect x="840" y="708" width="66" height="24" rx="12" fill="#ccfbf1" stroke="#0d9488"/><text x="873" y="724" class="pill">RETRIEVE</text>
+  <rect x="910" y="708" width="62" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="941" y="724" class="pill">ANALYZE</text>
+  <rect x="976" y="708" width="56" height="24" rx="12" fill="#fee2e2" stroke="#dc2626"/><text x="1004" y="724" class="pill">VERIFY</text>
+  <rect x="1036" y="708" width="68" height="24" rx="12" fill="#ffffff" stroke="#c4b5fd"/><text x="1070" y="724" class="pill">CONCLUDE</text>
+
+  <!-- Foundry caption -->
+  <text x="955" y="790" text-anchor="middle" font-size="11" font-style="italic" fill="#0d9488">Every RETRIEVE, dosing check and safety check queries Foundry IQ:</text>
+  <text x="955" y="806" text-anchor="middle" font-size="11" font-style="italic" fill="#0d9488">answers must cite retrieved evidence or the claim is dropped</text>
+
+  <!-- ============ SEQUENTIAL CHAIN ============ -->
+  <rect x="1180" y="270" width="330" height="130" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="1196" y="294" class="bt">Agent 6 · Synthesis</text>
+  <text x="1196" y="316" class="bd">Deterministic merge · counts converging</text>
+  <text x="1196" y="332" class="bd">independent pathways per nutrient</text>
+  <rect x="1196" y="358" width="44" height="22" rx="11" fill="#fecaca" stroke="#dc2626"/><text x="1218" y="373" font-size="9.5" font-weight="700" fill="#991b1b" text-anchor="middle">RED</text>
+  <rect x="1248" y="358" width="62" height="22" rx="11" fill="#fef9c3" stroke="#ca8a04"/><text x="1279" y="373" font-size="9.5" font-weight="700" fill="#854d0e" text-anchor="middle">YELLOW</text>
+  <rect x="1318" y="358" width="56" height="22" rx="11" fill="#bbf7d0" stroke="#16a34a"/><text x="1346" y="373" font-size="9.5" font-weight="700" fill="#166534" text-anchor="middle">GREEN</text>
+
+  <rect x="1180" y="430" width="330" height="110" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="1196" y="454" class="bt">Agent 7 · Protocol</text>
+  <text x="1196" y="476" class="bd">Dose, form, timing and evidence level</text>
+  <text x="1196" y="492" class="bd">for each RED / YELLOW nutrient,</text>
+  <text x="1196" y="508" class="bd">grounded in retrieved dosing evidence</text>
+
+  <rect x="1180" y="570" width="330" height="120" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="1196" y="594" class="bt">Agent 8 · Safety</text>
+  <text x="1196" y="616" class="bd">Red-flag symptom escalation · caps any</text>
+  <text x="1196" y="632" class="bd">dose above its tolerable upper limit ·</text>
+  <text x="1196" y="648" class="bd">blocks recommendations that lack</text>
+  <text x="1196" y="664" class="bd">grounding</text>
+
+  <rect x="1180" y="720" width="330" height="110" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="1196" y="744" class="bt">Agent 9 · Doctor Guide</text>
+  <text x="1196" y="766" class="bd">Turns top findings into 3 specific</text>
+  <text x="1196" y="782" class="bd">questions for the next appointment,</text>
+  <text x="1196" y="798" class="bd">plus patient action items</text>
+
+  <!-- Correlation engine -->
+  <rect x="760" y="960" width="360" height="110" rx="10" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="776" y="984" class="bt">Statistical Correlation Engine</text>
+  <text x="776" y="1006" class="bd">No LLM: lagged Spearman correlations</text>
+  <text x="776" y="1022" class="bd">between behaviors and symptoms</text>
+  <text x="776" y="1038" class="bd">(FDR-corrected, 60-day window)</text>
+
+  <!-- ============ OUTPUTS ============ -->
+  <rect x="1660" y="140" width="300" height="90" rx="10" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="1880" y="152" width="64" height="18" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="1912" y="164" font-size="8" font-weight="700" fill="#1e40af" text-anchor="middle">DOCTOR</text>
+  <text x="1676" y="164" class="bt">Live reasoning trace</text>
+  <text x="1676" y="186" class="bd">Every agent step visible in real</text>
+  <text x="1676" y="202" class="bd">time in the UI (SSE stream)</text>
+
+  <rect x="1660" y="270" width="300" height="90" rx="10" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="1880" y="282" width="64" height="18" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="1912" y="294" font-size="8" font-weight="700" fill="#1e40af" text-anchor="middle">DOCTOR</text>
+  <text x="1676" y="294" class="bt">Urgent escalation banner</text>
+  <text x="1676" y="316" class="bd">Red-flag symptoms trigger an</text>
+  <text x="1676" y="332" class="bd">immediate seek-care alert</text>
+
+  <rect x="1660" y="390" width="300" height="120" rx="10" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="1880" y="402" width="64" height="18" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="1912" y="414" font-size="8" font-weight="700" fill="#1e40af" text-anchor="middle">DOCTOR</text>
+  <text x="1676" y="414" class="bt">Prioritized protocol cards</text>
+  <text x="1676" y="436" class="bd">RED / YELLOW / GREEN cards with</text>
+  <text x="1676" y="452" class="bd">dose, form, timing, cautions and</text>
+  <text x="1676" y="468" class="bd">citations linking to each source</text>
+
+  <rect x="1660" y="550" width="300" height="90" rx="10" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="1834" y="562" width="110" height="18" rx="9" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="1889" y="574" font-size="8" font-weight="700" fill="#854d0e" text-anchor="middle">DOCTOR + PATIENT</text>
+  <text x="1676" y="574" class="bt">Doctor-visit guide</text>
+  <text x="1676" y="596" class="bd">3 questions for the clinician +</text>
+  <text x="1676" y="612" class="bd">action items for the patient</text>
+
+  <rect x="1660" y="690" width="300" height="100" rx="10" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="1880" y="702" width="64" height="18" rx="9" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="1912" y="714" font-size="8" font-weight="700" fill="#1e40af" text-anchor="middle">DOCTOR</text>
+  <text x="1676" y="714" class="bt">Doctor dashboard</text>
+  <text x="1676" y="736" class="bd">Correlation insights, lab table,</text>
+  <text x="1676" y="752" class="bd">journal history, adherence stats</text>
+
+  <rect x="1660" y="830" width="300" height="100" rx="10" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="1880" y="842" width="64" height="18" rx="9" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1912" y="854" font-size="8" font-weight="700" fill="#166534" text-anchor="middle">PATIENT</text>
+  <text x="1676" y="854" class="bt">Patient app</text>
+  <text x="1676" y="876" class="bd">Daily nudges, trend panel,</text>
+  <text x="1676" y="892" class="bd">doctor-visit summary</text>
+
+  <!-- ============ ARROWS ============ -->
+  <!-- inputs to storage -->
+  <path class="a" d="M360 182 H398 V495 H430" marker-end="url(#arr)"/>
+  <path class="a" d="M360 315 H430" marker-end="url(#arr)"/>
+  <path class="a" d="M360 507 H410 V550 H430" marker-end="url(#arr)"/>
+  <path class="a" d="M360 807 H430" marker-end="url(#arr)"/>
+
+  <!-- lab pipeline outputs -->
+  <path class="a" d="M565 420 V470" marker-end="url(#arr)"/>
+  <text x="575" y="450" class="lbl">confirmed labs only</text>
+  <path class="a" d="M700 320 H712 V725 H702" marker-end="url(#arr)"/>
+  <text x="704" y="630" class="lbl" text-anchor="middle" transform="rotate(-90 704 630)">document chunks: embedded + indexed</text>
+
+  <!-- SQLite to prep -->
+  <path class="a" d="M700 510 H722 V175 H760" marker-end="url(#arr)"/>
+  <text x="730" y="330" class="lbl" text-anchor="middle" transform="rotate(-90 730 330)">profile · labs · latest symptoms</text>
+
+  <!-- prep fan-out -->
+  <path class="a" d="M800 230 V270" marker-end="url(#arr)"/>
+  <path class="a" d="M760 200 H746 V510 H760" marker-end="url(#arr)"/>
+  <path class="a" d="M746 510 V680 H760" marker-end="url(#arr)"/>
+
+  <!-- trio fan-in -->
+  <path class="a" d="M1120 340 H1156 V310 H1180" marker-end="url(#arr)"/>
+  <path class="a" d="M1120 510 H1140 V335 H1180" marker-end="url(#arr)"/>
+  <path class="a" d="M1120 680 H1148 V360 H1180" marker-end="url(#arr)"/>
+
+  <!-- chain -->
+  <path class="a" d="M1345 400 V430" marker-end="url(#arr)"/>
+  <path class="a" d="M1345 540 V570" marker-end="url(#arr)"/>
+  <path class="a" d="M1345 690 V720" marker-end="url(#arr)"/>
+
+  <!-- Foundry IQ dashed -->
+  <path class="at" d="M700 740 H752 V380 H760" marker-end="url(#arrT)" marker-start="url(#arrT)"/>
+  <path class="at" d="M752 550 H760" marker-end="url(#arrT)"/>
+  <path class="at" d="M752 720 H760" marker-end="url(#arrT)"/>
+  <path class="at" d="M700 870 H1164 V485 H1180" marker-end="url(#arrT)" marker-start="url(#arrT)"/>
+  <path class="at" d="M1164 630 H1180" marker-end="url(#arrT)"/>
+
+  <!-- journal to correlation -->
+  <path class="a" d="M500 580 V620 H415 V1015 H760" marker-end="url(#arr)"/>
+  <text x="407" y="930" class="lbl" text-anchor="middle" transform="rotate(-90 407 930)">60 days of journal history</text>
+
+  <!-- SQLite direct to dashboard + patient app (joins bottom trunk) -->
+  <path class="a" d="M460 580 V602 H396 V1090 H936"/>
+  <text x="389" y="680" class="lbl" text-anchor="middle" transform="rotate(-90 389 680)">lab table · journal history · adherence</text>
+  <circle cx="940" cy="1090" r="3.5" fill="#475569"/>
+
+  <!-- correlation engine grounds findings via Foundry IQ -->
+  <path class="at" d="M760 990 H730 V890 H700" marker-end="url(#arrT)" marker-start="url(#arrT)"/>
+  <text x="744" y="940" class="lbl" text-anchor="middle" transform="rotate(-90 744 940)">find supporting literature</text>
+
+  <!-- correlation outputs -->
+  <path class="a" d="M1120 1015 H1345 V830" marker-end="url(#arr)"/>
+  <text x="1230" y="1007" class="lbl" text-anchor="middle">observational patterns</text>
+  <path class="a" d="M940 1070 V1090 H1645 V740 H1660" marker-end="url(#arr)"/>
+  <path class="a" d="M1645 880 H1660" marker-end="url(#arr)"/>
+  <text x="1290" y="1082" class="lbl" text-anchor="middle">journal stats · lab values · adherence · correlation insights · nudges</text>
+
+  <!-- pipeline to outputs -->
+  <path class="a" d="M1510 300 H1580 V185 H1660" marker-end="url(#arr)"/>
+  <path class="a" d="M1510 600 H1600 V315 H1660" marker-end="url(#arr)"/>
+  <path class="a" d="M1510 650 H1620 V450 H1660" marker-end="url(#arr)"/>
+  <text x="1520" y="643" class="lbl">validated protocol</text>
+  <path class="a" d="M1510 775 H1635 V595 H1660" marker-end="url(#arr)"/>
+
+  <!-- ============ LEGEND ============ -->
+  <text x="40" y="985" font-size="12" font-weight="700" fill="#64748b" letter-spacing="2">LEGEND</text>
+  <rect x="40" y="996" width="14" height="14" rx="3" fill="#dbeafe" stroke="#3b82f6"/><text x="62" y="1007" class="bd">Human input</text>
+  <rect x="40" y="1018" width="14" height="14" rx="3" fill="#f1f5f9" stroke="#94a3b8"/><text x="62" y="1029" class="bd">Storage / deterministic step</text>
+  <rect x="40" y="1040" width="14" height="14" rx="3" fill="#f3e8ff" stroke="#9333ea"/><text x="62" y="1051" class="bd">LLM reasoning agent</text>
+  <rect x="40" y="1062" width="14" height="14" rx="3" fill="#ccfbf1" stroke="#0d9488"/><text x="62" y="1073" class="bd">Foundry IQ retrieval (grounding layer)</text>
+  <rect x="40" y="1084" width="14" height="14" rx="3" fill="#cffafe" stroke="#0891b2"/><text x="62" y="1095" class="bd">Statistical engine (no LLM)</text>
+  <rect x="40" y="1106" width="14" height="14" rx="3" fill="#ffedd5" stroke="#f97316"/><text x="62" y="1117" class="bd">Output surface</text>
+  <line x1="40" y1="1138" x2="58" y2="1138" class="at"/><text x="62" y="1142" class="bd">grounded retrieval: cite evidence or drop the claim</text>
+  <text x="40" y="1162" class="bd">Corner chips on outputs (DOCTOR / PATIENT) show who sees that surface</text>
+</svg>

@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Absorbd Data Journey Tree</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #64748b;
+      --line: #94a3b8;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --blue: #dbeafe;
+      --blue-stroke: #2563eb;
+      --gray: #e5e7eb;
+      --gray-stroke: #6b7280;
+      --purple: #ede9fe;
+      --purple-stroke: #7c3aed;
+      --teal: #ccfbf1;
+      --teal-stroke: #0f766e;
+      --orange: #ffedd5;
+      --orange-stroke: #f97316;
+      --green: #dcfce7;
+      --green-stroke: #16a34a;
+      --yellow: #fef9c3;
+      --yellow-stroke: #ca8a04;
+      --red: #fee2e2;
+      --red-stroke: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    .page {
+      width: min(100vw, 2200px);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .sheet {
+      background: var(--panel);
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .title {
+      font-size: 34px;
+      font-weight: 780;
+      letter-spacing: 0;
+      fill: #0f172a;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      fill: var(--muted);
+    }
+
+    .layer-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      fill: #334155;
+    }
+
+    .lane {
+      fill: #f8fafc;
+      stroke: #e2e8f0;
+      stroke-width: 1.5;
+    }
+
+    .node {
+      stroke-width: 2;
+      filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.08));
+    }
+
+    .node-title {
+      color: #0f172a;
+      font-size: 15px;
+      font-weight: 760;
+      line-height: 1.2;
+      margin: 0 0 6px;
+    }
+
+    .node-body {
+      color: #334155;
+      font-size: 12.2px;
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .tiny-title {
+      color: #0f172a;
+      font-size: 11px;
+      font-weight: 780;
+      line-height: 1.1;
+      margin: 0;
+      text-align: center;
+    }
+
+    .tiny-body {
+      color: #475569;
+      font-size: 9.4px;
+      line-height: 1.1;
+      margin: 2px 0 0;
+      text-align: center;
+    }
+
+    .arrow {
+      fill: none;
+      stroke: var(--line);
+      stroke-width: 2.2;
+      marker-end: url(#arrowHead);
+    }
+
+    .arrow-teal {
+      stroke: var(--teal-stroke);
+    }
+
+    .arrow-purple {
+      stroke: var(--purple-stroke);
+    }
+
+    .arrow-orange {
+      stroke: var(--orange-stroke);
+    }
+
+    .arrow-red {
+      stroke: var(--red-stroke);
+    }
+
+    .arrow-label-box {
+      fill: rgba(255, 255, 255, 0.72);
+      stroke: rgba(148, 163, 184, 0.42);
+      stroke-width: 1;
+      rx: 6;
+    }
+
+    .arrow-label {
+      fill: #64748b;
+      font-size: 9.6px;
+      font-weight: 620;
+    }
+
+    .callout-title {
+      font-size: 14px;
+      font-weight: 820;
+      fill: #0f172a;
+    }
+
+    .callout-body {
+      font-size: 11.2px;
+      fill: #334155;
+    }
+
+    .legend-text {
+      font-size: 11px;
+      fill: #334155;
+      font-weight: 650;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .page {
+        padding: 0;
+        width: 100%;
+      }
+
+      .sheet {
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="sheet" aria-label="Absorbd information flow diagram">
+      <svg viewBox="0 0 2200 1420" role="img" aria-labelledby="diagramTitle diagramDesc">
+        <title id="diagramTitle">Absorbd: How Patient Information Becomes a Grounded Nutrition Protocol</title>
+        <desc id="diagramDesc">A left-to-right data journey tree showing inputs, processing, and outputs for a nine-agent clinical nutrition reasoning system.</desc>
+
+        <defs>
+          <marker id="arrowHead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+          <path d="M0,0 L10,4 L0,8 Z" fill="#64748b"></path>
+          </marker>
+
+          <g id="loopMotif">
+            <rect x="0" y="0" width="66" height="42" rx="8" fill="#ffffff" stroke="#a78bfa" stroke-width="1.4"></rect>
+            <text x="33" y="25" text-anchor="middle" class="arrow-label">PLAN</text>
+            <rect x="76" y="0" width="82" height="42" rx="8" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.4"></rect>
+            <text x="117" y="25" text-anchor="middle" class="arrow-label">RETRIEVE</text>
+            <rect x="168" y="0" width="78" height="42" rx="8" fill="#ffffff" stroke="#a78bfa" stroke-width="1.4"></rect>
+            <text x="207" y="25" text-anchor="middle" class="arrow-label">ANALYZE</text>
+            <rect x="256" y="0" width="76" height="42" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"></rect>
+            <text x="294" y="25" text-anchor="middle" class="arrow-label">VERIFY</text>
+            <rect x="342" y="0" width="86" height="42" rx="8" fill="#ffffff" stroke="#a78bfa" stroke-width="1.4"></rect>
+            <text x="385" y="25" text-anchor="middle" class="arrow-label">CONCLUDE</text>
+            <path d="M66 21 H76 M158 21 H168 M246 21 H256 M332 21 H342" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrowHead)" fill="none"></path>
+          </g>
+        </defs>
+
+        <rect width="2200" height="1420" fill="#ffffff"></rect>
+        <text x="60" y="58" class="title">Absorbd: How Patient Information Becomes a Grounded Nutrition Protocol</text>
+        <text x="60" y="86" class="subtitle">Three-layer data journey tree for a 9-agent clinical nutrition reasoning system for IBD patients.</text>
+
+        <rect x="55" y="112" width="520" height="1238" rx="18" class="lane"></rect>
+        <rect x="605" y="112" width="980" height="1238" rx="18" class="lane"></rect>
+        <rect x="1615" y="112" width="530" height="1238" rx="18" class="lane"></rect>
+        <text x="82" y="148" class="layer-title">INPUTS</text>
+        <text x="632" y="148" class="layer-title">PROCESSING</text>
+        <text x="1642" y="148" class="layer-title">OUTPUTS</text>
+
+        <g id="legend">
+          <rect x="1374" y="34" width="720" height="68" rx="12" fill="#ffffff" stroke="#e2e8f0"></rect>
+          <rect x="1392" y="52" width="22" height="14" rx="4" fill="#dbeafe" stroke="#2563eb"></rect>
+          <text x="1421" y="64" class="legend-text">human input</text>
+          <rect x="1510" y="52" width="22" height="14" rx="4" fill="#e5e7eb" stroke="#6b7280"></rect>
+          <text x="1539" y="64" class="legend-text">storage</text>
+          <rect x="1608" y="52" width="22" height="14" rx="4" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <text x="1637" y="64" class="legend-text">AI agent</text>
+          <rect x="1712" y="52" width="22" height="14" rx="4" fill="#ccfbf1" stroke="#0f766e"></rect>
+          <text x="1741" y="64" class="legend-text">retrieval</text>
+          <rect x="1826" y="52" width="22" height="14" rx="4" fill="#ffedd5" stroke="#f97316"></rect>
+          <text x="1855" y="64" class="legend-text">output</text>
+          <rect x="1932" y="52" width="18" height="14" rx="4" fill="#dcfce7" stroke="#16a34a"></rect>
+          <rect x="1954" y="52" width="18" height="14" rx="4" fill="#fef9c3" stroke="#ca8a04"></rect>
+          <rect x="1976" y="52" width="18" height="14" rx="4" fill="#fee2e2" stroke="#dc2626"></rect>
+          <text x="2002" y="64" class="legend-text">priority</text>
+        </g>
+
+        <!-- Input layer nodes -->
+        <g id="doctor-input">
+          <rect x="90" y="180" width="260" height="122" rx="12" class="node" fill="#dbeafe" stroke="#2563eb"></rect>
+          <foreignObject x="108" y="198" width="224" height="88">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Doctor Input</p>
+              <p class="node-body">Patient profile: UC, Crohn's, or Celiac, medications, symptoms to watch, dietary restrictions, clinical notes.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="profile-db">
+          <rect x="385" y="198" width="155" height="74" rx="12" class="node" fill="#e5e7eb" stroke="#6b7280"></rect>
+          <foreignObject x="398" y="214" width="128" height="44">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">SQLite</p>
+              <p class="node-body">patient profile</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="lab-upload">
+          <rect x="90" y="342" width="260" height="118" rx="12" class="node" fill="#dbeafe" stroke="#2563eb"></rect>
+          <foreignObject x="108" y="360" width="224" height="84">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Lab Document Upload</p>
+              <p class="node-body">Doctor or patient uploads lab PDFs across 11 document types.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="doc-ingestion">
+          <rect x="385" y="326" width="155" height="150" rx="12" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="398" y="342" width="128" height="118">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Document Ingestion</p>
+              <p class="node-body">pdfplumber text extraction, LLM lab value extraction, chunking, embedding, and patient_id tagging.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="doctor-gate">
+          <rect x="90" y="500" width="260" height="96" rx="12" class="node" fill="#dbeafe" stroke="#2563eb"></rect>
+          <foreignObject x="108" y="518" width="224" height="60">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Doctor Confirmation Gate</p>
+              <p class="node-body">Only doctor-approved lab values proceed.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="lab-db">
+          <rect x="385" y="512" width="155" height="72" rx="12" class="node" fill="#e5e7eb" stroke="#6b7280"></rect>
+          <foreignObject x="398" y="527" width="128" height="42">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">SQLite</p>
+              <p class="node-body">lab_values table</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="patient-doc-index">
+          <rect x="385" y="620" width="155" height="96" rx="12" class="node" fill="#ccfbf1" stroke="#0f766e"></rect>
+          <foreignObject x="398" y="636" width="128" height="68">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Azure AI Search</p>
+              <p class="node-body">patient-uploaded docs, tagged by patient_id</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="journal">
+          <rect x="90" y="748" width="260" height="126" rx="12" class="node" fill="#dbeafe" stroke="#2563eb"></rect>
+          <foreignObject x="108" y="766" width="224" height="92">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Patient Daily Journal</p>
+              <p class="node-body">Conversational check-in: symptoms, meds taken or missed, food, sleep, stool count, stress, exercise, notes.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="journal-db">
+          <rect x="385" y="776" width="155" height="72" rx="12" class="node" fill="#e5e7eb" stroke="#6b7280"></rect>
+          <foreignObject x="398" y="791" width="128" height="42">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">SQLite</p>
+              <p class="node-body">journal_entries</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="knowledge-base">
+          <rect x="90" y="930" width="260" height="132" rx="12" class="node" fill="#ccfbf1" stroke="#0f766e"></rect>
+          <foreignObject x="108" y="948" width="224" height="96">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Clinical Knowledge Base</p>
+              <p class="node-body">Built offline one time: 13 NIH ODS fact sheets, 15 FDA DailyMed labels, 14 IBD correlation studies.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="literature-index">
+          <rect x="385" y="940" width="155" height="112" rx="12" class="node" fill="#ccfbf1" stroke="#0f766e"></rect>
+          <foreignObject x="398" y="956" width="128" height="80">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Azure AI Search</p>
+              <p class="node-body">general literature index, no patient tag</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="access-code">
+          <rect x="90" y="1110" width="260" height="94" rx="12" class="node" fill="#dbeafe" stroke="#2563eb"></rect>
+          <foreignObject x="108" y="1128" width="224" height="58">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Patient Access Code Entry</p>
+              <p class="node-body">Links patient to the doctor-created profile.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <!-- Processing layer nodes -->
+        <g id="profile-prep">
+          <rect x="650" y="192" width="310" height="154" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="670" y="211" width="270" height="116">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Profile Preparation</p>
+              <p class="node-body">Merges patient profile, confirmed lab values, latest journal symptoms, brand-to-generic medication normalization, and active inflammation flag from CRP or calprotectin.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="retrieval">
+          <rect x="1020" y="182" width="320" height="174" rx="16" class="node" fill="#ccfbf1" stroke="#0f766e"></rect>
+          <foreignObject x="1040" y="202" width="280" height="132">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Foundry IQ Knowledge Retrieval</p>
+              <p class="node-body">Azure AI Search agentic retrieval blends two sources per query: general clinical literature plus this patient's uploaded documents with a patient_id filter.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <text x="650" y="390" class="subtitle">Agents 3-9 are shown after profile preparation and access-code linking.</text>
+
+        <g id="agent3">
+          <rect x="650" y="430" width="430" height="154" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="670" y="450" width="390" height="68">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 3 Deficiency Hypothesis</p>
+              <p class="node-body">Condition, symptoms, and lab values become deficiency candidates.</p>
+            </div>
+          </foreignObject>
+          <use href="#loopMotif" x="670" y="526"></use>
+        </g>
+
+        <g id="agent4">
+          <rect x="650" y="625" width="430" height="154" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="670" y="645" width="390" height="68">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 4 Medication Interaction</p>
+              <p class="node-body">Each medication becomes drug-nutrient depletion hypotheses.</p>
+            </div>
+          </foreignObject>
+          <use href="#loopMotif" x="670" y="721"></use>
+        </g>
+
+        <g id="agent5">
+          <rect x="650" y="820" width="430" height="154" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="670" y="840" width="390" height="68">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 5 Dietary Gap</p>
+              <p class="node-body">Each dietary restriction becomes nutrient gap hypotheses.</p>
+            </div>
+          </foreignObject>
+          <use href="#loopMotif" x="670" y="916"></use>
+        </g>
+
+        <g id="verify-callout">
+          <rect x="1115" y="520" width="265" height="168" rx="14" fill="#fff7ed" stroke="#dc2626" stroke-width="2.4" stroke-dasharray="8 5"></rect>
+          <text x="1135" y="550" class="callout-title">Differentiator 1</text>
+          <text x="1135" y="576" class="callout-title">Adversarial VERIFY</text>
+          <text x="1135" y="603" class="callout-body">Every branch tests cited evidence</text>
+          <text x="1135" y="622" class="callout-body">against the proposed finding.</text>
+          <text x="1135" y="649" class="callout-body">Unsupported claims are dropped</text>
+          <text x="1135" y="668" class="callout-body">before synthesis or protocol output.</text>
+        </g>
+
+        <g id="agent6">
+          <rect x="1130" y="760" width="365" height="146" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="1150" y="779" width="325" height="72">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 6 Synthesis</p>
+              <p class="node-body">Deterministic merge counts how many independent pathways converge on each nutrient.</p>
+            </div>
+          </foreignObject>
+          <rect x="1152" y="858" width="86" height="30" rx="8" fill="#fee2e2" stroke="#dc2626"></rect>
+          <text x="1195" y="878" text-anchor="middle" class="arrow-label">RED</text>
+          <rect x="1254" y="858" width="98" height="30" rx="8" fill="#fef9c3" stroke="#ca8a04"></rect>
+          <text x="1303" y="878" text-anchor="middle" class="arrow-label">YELLOW</text>
+          <rect x="1368" y="858" width="86" height="30" rx="8" fill="#dcfce7" stroke="#16a34a"></rect>
+          <text x="1411" y="878" text-anchor="middle" class="arrow-label">GREEN</text>
+        </g>
+
+        <g id="agent7">
+          <rect x="1130" y="947" width="365" height="126" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="1150" y="966" width="325" height="88">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 7 Protocol</p>
+              <p class="node-body">For each RED or YELLOW nutrient, retrieves dosing evidence, then proposes dose, form, timing, and evidence level.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="agent8">
+          <rect x="1130" y="1112" width="365" height="126" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="1150" y="1131" width="325" height="88">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 8 Safety</p>
+              <p class="node-body">Checks red-flag escalation, retrieves tolerable upper limits, caps high doses, and blocks ungrounded recommendations.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="agent9">
+          <rect x="1130" y="1275" width="365" height="100" rx="14" class="node" fill="#ede9fe" stroke="#7c3aed"></rect>
+          <foreignObject x="1150" y="1294" width="325" height="64">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Agent 9 Doctor Guide</p>
+              <p class="node-body">Prioritizes top issues into 3 appointment questions plus patient action items.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="stats-engine">
+          <rect x="660" y="1118" width="330" height="126" rx="14" class="node" fill="#ffffff" stroke="#475569"></rect>
+          <foreignObject x="680" y="1137" width="290" height="88">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Statistical Correlation Engine</p>
+              <p class="node-body">Not an LLM. Computes lagged Spearman correlations between behaviors and symptoms as observational, not causal, patterns.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="retrieval-callout">
+          <rect x="1370" y="190" width="185" height="158" rx="14" fill="#ecfeff" stroke="#0f766e" stroke-width="2.4" stroke-dasharray="8 5"></rect>
+          <text x="1390" y="220" class="callout-title">Differentiator 2</text>
+          <text x="1390" y="246" class="callout-title">Blended Retrieval</text>
+          <text x="1390" y="273" class="callout-body">Every query uses clinical</text>
+          <text x="1390" y="292" class="callout-body">literature plus patient</text>
+          <text x="1390" y="311" class="callout-body">documents filtered by</text>
+          <text x="1390" y="330" class="callout-body">patient_id.</text>
+        </g>
+
+        <!-- Output layer nodes -->
+        <g id="trace-output">
+          <rect x="1650" y="182" width="420" height="92" rx="12" class="node" fill="#ffedd5" stroke="#f97316"></rect>
+          <foreignObject x="1670" y="201" width="380" height="56">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Live Streaming Reasoning Trace</p>
+              <p class="node-body">Every agent step is visible in real time in the UI.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="escalation-output">
+          <rect x="1650" y="314" width="420" height="86" rx="12" class="node" fill="#fee2e2" stroke="#dc2626"></rect>
+          <foreignObject x="1670" y="332" width="380" height="50">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Urgent Escalation Banner</p>
+              <p class="node-body">Shown when red-flag symptoms are detected.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="protocol-output">
+          <rect x="1650" y="445" width="420" height="128" rx="12" class="node" fill="#ffedd5" stroke="#f97316"></rect>
+          <foreignObject x="1670" y="464" width="380" height="88">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Prioritized Supplement Protocol Cards</p>
+              <p class="node-body">RED, YELLOW, and GREEN cards with dose, form, timing, cautions, and citations back to knowledge sources.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="questions-output">
+          <rect x="1650" y="625" width="420" height="96" rx="12" class="node" fill="#ffedd5" stroke="#f97316"></rect>
+          <foreignObject x="1670" y="644" width="380" height="58">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Doctor Visit Questions and Action List</p>
+              <p class="node-body">3 tailored questions plus patient action items.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="doctor-dashboard">
+          <rect x="1650" y="785" width="420" height="122" rx="12" class="node" fill="#ffedd5" stroke="#f97316"></rect>
+          <foreignObject x="1670" y="804" width="380" height="82">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Doctor Dashboard</p>
+              <p class="node-body">Correlation insights card, lab table, journal history, and adherence stats.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <g id="patient-app">
+          <rect x="1650" y="965" width="420" height="122" rx="12" class="node" fill="#ffedd5" stroke="#f97316"></rect>
+          <foreignObject x="1670" y="984" width="380" height="82">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p class="node-title">Patient App</p>
+              <p class="node-body">Daily nudges, trend panel, and doctor visit summary.</p>
+            </div>
+          </foreignObject>
+        </g>
+
+        <!-- Input arrows -->
+        <path class="arrow" d="M350 241 H385"></path>
+        <rect x="344" y="217" width="96" height="22" class="arrow-label-box"></rect>
+        <text x="392" y="232" text-anchor="middle" class="arrow-label">profile fields</text>
+
+        <path class="arrow" d="M540 235 H610 V250 H650"></path>
+        <rect x="553" y="218" width="88" height="22" class="arrow-label-box"></rect>
+        <text x="597" y="233" text-anchor="middle" class="arrow-label">patient profile</text>
+
+        <path class="arrow" d="M350 401 H385"></path>
+        <rect x="320" y="377" width="152" height="22" class="arrow-label-box"></rect>
+        <text x="396" y="392" text-anchor="middle" class="arrow-label">lab PDFs to pdfplumber</text>
+
+        <path class="arrow" d="M462 476 V500 H350"></path>
+        <rect x="345" y="474" width="172" height="22" class="arrow-label-box"></rect>
+        <text x="431" y="489" text-anchor="middle" class="arrow-label">LLM candidate lab values</text>
+
+        <path class="arrow" d="M350 548 H385"></path>
+        <rect x="318" y="523" width="152" height="22" class="arrow-label-box"></rect>
+        <text x="394" y="538" text-anchor="middle" class="arrow-label">doctor-approved values</text>
+
+        <path class="arrow" d="M540 548 H610 V283 H650"></path>
+        <rect x="548" y="406" width="116" height="22" class="arrow-label-box"></rect>
+        <text x="606" y="421" text-anchor="middle" class="arrow-label">confirmed labs</text>
+
+        <path class="arrow arrow-teal" d="M540 668 H574 V160 H1000 V269 H1020"></path>
+        <rect x="680" y="146" width="196" height="22" class="arrow-label-box"></rect>
+        <text x="778" y="161" text-anchor="middle" class="arrow-label">patient chunks plus patient_id</text>
+
+        <path class="arrow arrow-teal" d="M462 476 V620"></path>
+        <rect x="476" y="540" width="218" height="22" class="arrow-label-box"></rect>
+        <text x="585" y="555" text-anchor="middle" class="arrow-label">embedded chunks plus patient_id</text>
+
+        <path class="arrow" d="M350 812 H385"></path>
+        <rect x="330" y="788" width="136" height="22" class="arrow-label-box"></rect>
+        <text x="398" y="803" text-anchor="middle" class="arrow-label">daily check-in data</text>
+
+        <path class="arrow" d="M540 812 H574 V358 H640 V303 H650"></path>
+        <rect x="534" y="575" width="120" height="22" class="arrow-label-box"></rect>
+        <text x="594" y="590" text-anchor="middle" class="arrow-label">latest symptoms</text>
+
+        <path class="arrow" d="M540 812 H574 V1181 H660"></path>
+        <rect x="536" y="1160" width="120" height="22" class="arrow-label-box"></rect>
+        <text x="596" y="1175" text-anchor="middle" class="arrow-label">journal entries</text>
+
+        <path class="arrow arrow-teal" d="M350 996 H385"></path>
+        <rect x="318" y="971" width="166" height="22" class="arrow-label-box"></rect>
+        <text x="401" y="986" text-anchor="middle" class="arrow-label">chunked literature text</text>
+
+        <path class="arrow arrow-teal" d="M540 996 H560 V142 H1000 V269 H1020"></path>
+        <rect x="700" y="120" width="174" height="22" class="arrow-label-box"></rect>
+        <text x="787" y="135" text-anchor="middle" class="arrow-label">general literature chunks</text>
+
+        <path class="arrow" d="M350 1157 H560 V128 H636 V315 H650"></path>
+        <rect x="370" y="1133" width="144" height="22" class="arrow-label-box"></rect>
+        <text x="442" y="1148" text-anchor="middle" class="arrow-label">profile link token</text>
+
+        <!-- Processing arrows -->
+        <path class="arrow arrow-purple" d="M805 346 V392 H865 V430"></path>
+        <rect x="769" y="373" width="196" height="22" class="arrow-label-box"></rect>
+        <text x="867" y="388" text-anchor="middle" class="arrow-label">prepared profile and labs</text>
+
+        <path class="arrow arrow-purple" d="M805 346 V606 H865 V625"></path>
+        <rect x="770" y="590" width="192" height="22" class="arrow-label-box"></rect>
+        <text x="866" y="605" text-anchor="middle" class="arrow-label">normalized medications</text>
+
+        <path class="arrow arrow-purple" d="M805 346 V800 H865 V820"></path>
+        <rect x="756" y="784" width="222" height="22" class="arrow-label-box"></rect>
+        <text x="867" y="799" text-anchor="middle" class="arrow-label">restrictions and condition</text>
+
+        <path class="arrow arrow-teal" d="M1010 547 H1096 V372 H1180 V356"></path>
+        <rect x="998" y="396" width="200" height="22" class="arrow-label-box"></rect>
+        <text x="1098" y="411" text-anchor="middle" class="arrow-label">deficiency query plus ID</text>
+
+        <path class="arrow arrow-teal" d="M1010 742 H1096 V372 H1180 V356"></path>
+        <rect x="998" y="606" width="200" height="22" class="arrow-label-box"></rect>
+        <text x="1098" y="621" text-anchor="middle" class="arrow-label">drug-nutrient query plus ID</text>
+
+        <path class="arrow arrow-teal" d="M1010 937 H1096 V372 H1180 V356"></path>
+        <rect x="998" y="995" width="200" height="22" class="arrow-label-box"></rect>
+        <text x="1098" y="1010" text-anchor="middle" class="arrow-label">dietary gap query plus ID</text>
+
+        <path class="arrow arrow-teal" d="M1180 356 V386 H945 V430"></path>
+        <rect x="978" y="364" width="242" height="22" class="arrow-label-box"></rect>
+        <text x="1099" y="379" text-anchor="middle" class="arrow-label">grounded snippets plus citations</text>
+
+        <path class="arrow arrow-purple" d="M1080 507 H1115"></path>
+        <rect x="1042" y="481" width="152" height="22" class="arrow-label-box"></rect>
+        <text x="1118" y="496" text-anchor="middle" class="arrow-label">claims to ground</text>
+
+        <path class="arrow arrow-purple" d="M1080 702 H1115 V618"></path>
+        <rect x="1036" y="692" width="160" height="22" class="arrow-label-box"></rect>
+        <text x="1116" y="707" text-anchor="middle" class="arrow-label">interaction claims</text>
+
+        <path class="arrow arrow-purple" d="M1080 897 H1115 V668"></path>
+        <rect x="930" y="898" width="92" height="22" class="arrow-label-box"></rect>
+        <text x="976" y="913" text-anchor="middle" class="arrow-label">gap claims</text>
+
+        <path class="arrow arrow-purple" d="M1080 507 H1105 V786 H1130"></path>
+        <rect x="1036" y="734" width="166" height="22" class="arrow-label-box"></rect>
+        <text x="1119" y="749" text-anchor="middle" class="arrow-label">verified deficiencies</text>
+
+        <path class="arrow arrow-purple" d="M1080 702 H1114 V822 H1130"></path>
+        <rect x="1040" y="802" width="166" height="22" class="arrow-label-box"></rect>
+        <text x="1123" y="817" text-anchor="middle" class="arrow-label">verified depletions</text>
+
+        <path class="arrow arrow-purple" d="M1080 897 H1130"></path>
+        <rect x="1033" y="870" width="168" height="22" class="arrow-label-box"></rect>
+        <text x="1117" y="885" text-anchor="middle" class="arrow-label">verified dietary gaps</text>
+
+        <path class="arrow arrow-purple" d="M1313 906 V947"></path>
+        <rect x="1138" y="914" width="150" height="22" class="arrow-label-box"></rect>
+        <text x="1213" y="929" text-anchor="middle" class="arrow-label">RED/YELLOW nutrients</text>
+
+        <path class="arrow arrow-teal" d="M1325 947 V372 H1180 V356"></path>
+        <rect x="1252" y="944" width="134" height="22" class="arrow-label-box"></rect>
+        <text x="1319" y="959" text-anchor="middle" class="arrow-label">dosing evidence</text>
+
+        <path class="arrow arrow-teal" d="M1340 356 H1520 V1010 H1495"></path>
+        <rect x="1396" y="914" width="116" height="22" class="arrow-label-box"></rect>
+        <text x="1454" y="929" text-anchor="middle" class="arrow-label">dosing citations</text>
+
+        <path class="arrow arrow-purple" d="M1313 1073 V1112"></path>
+        <rect x="1330" y="1080" width="170" height="22" class="arrow-label-box"></rect>
+        <text x="1415" y="1095" text-anchor="middle" class="arrow-label">draft protocol with citations</text>
+
+        <path class="arrow arrow-teal" d="M1275 1112 V372 H1180 V356"></path>
+        <rect x="1138" y="1088" width="132" height="22" class="arrow-label-box"></rect>
+        <text x="1204" y="1103" text-anchor="middle" class="arrow-label">upper-limit query</text>
+
+        <path class="arrow arrow-purple" d="M1313 1238 V1275"></path>
+        <rect x="1192" y="1246" width="242" height="22" class="arrow-label-box"></rect>
+        <text x="1313" y="1261" text-anchor="middle" class="arrow-label">safe protocol and flags</text>
+
+        <path class="arrow" d="M990 1181 H1048 V1325 H1130"></path>
+        <rect x="890" y="1298" width="274" height="22" class="arrow-label-box"></rect>
+        <text x="1027" y="1313" text-anchor="middle" class="arrow-label">observational, not causal</text>
+
+        <!-- Output arrows -->
+        <path class="arrow arrow-orange" d="M1495 1325 H1605 V228 H1650"></path>
+        <rect x="1508" y="212" width="142" height="22" class="arrow-label-box"></rect>
+        <text x="1579" y="227" text-anchor="middle" class="arrow-label">agent step events</text>
+
+        <path class="arrow arrow-red" d="M1495 1175 H1590 V357 H1650"></path>
+        <rect x="1510" y="341" width="138" height="22" class="arrow-label-box"></rect>
+        <text x="1579" y="356" text-anchor="middle" class="arrow-label">red-flag symptoms</text>
+
+        <path class="arrow arrow-orange" d="M1495 1175 H1600 V509 H1650"></path>
+        <rect x="1510" y="493" width="146" height="22" class="arrow-label-box"></rect>
+        <text x="1583" y="508" text-anchor="middle" class="arrow-label">approved protocol</text>
+
+        <path class="arrow arrow-orange" d="M1495 1325 H1595 V673 H1650"></path>
+        <rect x="1510" y="657" width="146" height="22" class="arrow-label-box"></rect>
+        <text x="1583" y="672" text-anchor="middle" class="arrow-label">questions and actions</text>
+
+        <path class="arrow arrow-orange" d="M1495 1325 H1585 V846 H1650"></path>
+        <rect x="1492" y="830" width="170" height="22" class="arrow-label-box"></rect>
+        <text x="1577" y="845" text-anchor="middle" class="arrow-label">summary and priorities</text>
+
+        <path class="arrow" d="M990 1181 H1575 V846 H1650"></path>
+        <rect x="1340" y="1159" width="168" height="22" class="arrow-label-box"></rect>
+        <text x="1424" y="1174" text-anchor="middle" class="arrow-label">correlation insights</text>
+
+        <path class="arrow" d="M540 548 H574 V1390 H1608 V846 H1650"></path>
+        <rect x="1510" y="1368" width="78" height="22" class="arrow-label-box"></rect>
+        <text x="1549" y="1383" text-anchor="middle" class="arrow-label">lab table</text>
+
+        <path class="arrow" d="M540 812 H560 V1374 H1620 V846 H1650"></path>
+        <rect x="1388" y="1352" width="114" height="22" class="arrow-label-box"></rect>
+        <text x="1445" y="1367" text-anchor="middle" class="arrow-label">journal history</text>
+
+        <path class="arrow" d="M990 1181 H1610 V1026 H1650"></path>
+        <rect x="1370" y="1203" width="142" height="22" class="arrow-label-box"></rect>
+        <text x="1441" y="1218" text-anchor="middle" class="arrow-label">daily nudges</text>
+
+        <path class="arrow arrow-orange" d="M1495 1325 H1595 V1026 H1650"></path>
+        <rect x="1495" y="1010" width="146" height="22" class="arrow-label-box"></rect>
+        <text x="1568" y="1025" text-anchor="middle" class="arrow-label">visit summary</text>
+
+        <path class="arrow" d="M540 812 H560 V1374 H1620 V1068 H1650"></path>
+        <rect x="1260" y="1352" width="104" height="22" class="arrow-label-box"></rect>
+        <text x="1312" y="1367" text-anchor="middle" class="arrow-label">trend data</text>
+      </svg>
+    </section>
+  </main>
+</body>
+</html>

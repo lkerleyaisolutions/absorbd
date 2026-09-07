@@ -1,0 +1,42 @@
+Absorbd Proprietary License
+Copyright (c) 2026 Logan Kerley. All rights reserved.
+
+This software and all associated source code, documentation, designs, and other
+materials in this repository (the "Software"), excluding the third-party materials
+described below, are the proprietary property of Logan Kerley (the "Author"). The
+Software is made publicly visible solely so that it can be viewed as a portfolio piece.
+Publication of the source does not place it in the public domain and does not grant any
+license to use it.
+
+1. Reservation of rights.
+   All rights are reserved by the Author. No right or license, express or implied, is
+   granted to any person or entity except as explicitly stated in Section 2.
+
+2. Limited permissions.
+   a. Any person may view and read the Software in this repository.
+   No other rights are granted.
+
+3. Prohibited without prior written permission.
+   Except as permitted in Section 2, you may NOT, in whole or in part:
+   - use, run, deploy, or operate the Software;
+   - copy, reproduce, republish, or distribute the Software;
+   - modify, adapt, translate, or create derivative works of the Software;
+   - sell, sublicense, rent, lease, or otherwise commercialize the Software; or
+   - remove or alter this notice or any copyright or attribution notice.
+   To request permission, contact the Author at lkerley03@gmail.com.
+
+4. Third-party materials.
+   This repository includes documents from the U.S. National Institutes of Health
+   Office of Dietary Supplements (NIH ODS) and the U.S. FDA DailyMed, which are works
+   of the U.S. Government and are in the public domain. Those documents are not covered
+   by this license and remain in the public domain. Third-party software dependencies
+   are governed by their own respective licenses.
+
+5. No warranty.
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+   PARTICULAR PURPOSE, AND NONINFRINGEMENT. THE SOFTWARE IS NOT A MEDICAL DEVICE AND IS
+   NOT INTENDED TO DIAGNOSE, TREAT, CURE, OR PREVENT ANY DISEASE. IN NO EVENT SHALL THE
+   AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+   CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

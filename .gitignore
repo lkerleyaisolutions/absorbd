@@ -1,0 +1,46 @@
+# Secrets - NEVER commit
+.env
+*.key
+*.pem
+
+# Logs (may capture PHI/PII at runtime)
+*.log
+*.err
+
+# Local tooling config (absolute paths, local permissions)
+.claude/
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+build/
+dist/
+.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw downloaded source docs. The public-domain US-government sources (NIH ODS,
+# FDA DailyMed) are committed as a snapshot so the knowledge base rebuilds offline
+# and deterministically. PMC/PubMed have mixed licenses, so they stay out of the repo.
+data/raw/*
+!data/raw/ods/
+!data/raw/dailymed/
+
+# Databases (may contain patient health data - never commit)
+absorb-iq-journal.db
+data/*.db
+
+# Persisted patient-uploaded PDFs (PHI - never commit)
+uploads/
+
+# Editor
+.vscode/
+.idea/

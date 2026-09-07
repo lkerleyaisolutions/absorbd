@@ -1,0 +1,541 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4200" height="2400" viewBox="0 0 4200 2400">
+<defs>
+  <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+    <path d="M 1 1 L 13 7 L 1 13 z" fill="#475569"/>
+  </marker>
+  <marker id="tealArrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+    <path d="M 1 1 L 13 7 L 1 13 z" fill="#0f766e"/>
+  </marker>
+  <marker id="orangeArrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+    <path d="M 1 1 L 13 7 L 1 13 z" fill="#ea580c"/>
+  </marker>
+  <marker id="tinyArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+    <path d="M 1 1 L 7 4 L 1 7 z" fill="#475569"/>
+  </marker>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+    <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.09"/>
+  </filter>
+</defs>
+<rect width="4200" height="2400" fill="#f8fafc"/>
+<text x="70" y="82" font-size="50" font-weight="950" fill="#0f172a">Absorbd: How Patient Information Becomes a Grounded Nutrition Protocol</text>
+<text x="72" y="122" font-size="24" font-weight="600" fill="#475569">A left to right data journey tree for a 9-agent clinical nutrition reasoning system for IBD patients</text>
+<rect x="60" y="155" width="700" height="2120" rx="34" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+  <text x="92" y="213" font-size="34" font-weight="900" fill="#0f172a">INPUTS</text>
+  <text x="92" y="247" font-size="22" font-weight="600" fill="#475569">Where information enters</text>
+<rect x="790" y="155" width="2540" height="2120" rx="34" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+  <text x="822" y="213" font-size="34" font-weight="900" fill="#0f172a">PROCESSING</text>
+  <text x="822" y="247" font-size="22" font-weight="600" fill="#475569">Where information travels through storage, retrieval, and agents</text>
+<rect x="3360" y="155" width="780" height="2120" rx="34" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+  <text x="3392" y="213" font-size="34" font-weight="900" fill="#0f172a">OUTPUTS</text>
+  <text x="3392" y="247" font-size="22" font-weight="600" fill="#475569">What comes out and where it appears</text>
+<g id="legend">
+  <rect x="2480" y="48" width="1610" height="78" rx="24" fill="#ffffff" stroke="#dbe3ef"/>
+  <g>
+    <rect x="2510" y="65" width="150" height="38" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="2585" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2585" dy="0">Human input</tspan></text>
+  </g>
+  <g>
+    <rect x="2680" y="65" width="120" height="38" rx="16" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="2740" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2740" dy="0">Storage</tspan></text>
+  </g>
+  <g>
+    <rect x="2820" y="65" width="118" height="38" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2879" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2879" dy="0">AI agent</tspan></text>
+  </g>
+  <g>
+    <rect x="2960" y="65" width="142" height="38" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/>
+    <text x="3031" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3031" dy="0">Retrieval</tspan></text>
+  </g>
+  <g>
+    <rect x="3125" y="65" width="86" height="38" rx="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="3168" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3168" dy="0">RED</tspan></text>
+  </g>
+  <g>
+    <rect x="3230" y="65" width="112" height="38" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="3286" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3286" dy="0">YELLOW</tspan></text>
+  </g>
+  <g>
+    <rect x="3360" y="65" width="100" height="38" rx="16" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="3410" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3410" dy="0">GREEN</tspan></text>
+  </g>
+  <g>
+    <rect x="3480" y="65" width="112" height="38" rx="16" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="3536" y="89" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3536" dy="0">Output</tspan></text>
+  </g>
+  <path d="M 3620 84 L 3705 84" stroke="#0f766e" stroke-width="4" stroke-dasharray="12 9" marker-end="url(#tealArrow)"/>
+  <text x="3724" y="91" font-size="18" font-weight="700" fill="#475569">retrieval calls</text>
+</g>
+<path d="M 720 318 L 830 318" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 720 595 L 830 595" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1040 568 L 1080 568" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1330 568 L 1370 568" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1625 568 L 1665 568" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1040 590 L 1160 590 L 1160 735 L 1450 735" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 720 875 L 830 875" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 720 1205 L 830 1205" fill="none" stroke="#0f766e" stroke-width="3"  marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1080 1185 L 1120 1185" fill="none" stroke="#0f766e" stroke-width="3"  marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 720 1512 L 830 1512" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1045 1460 L 1045 355 L 1010 355" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1240 302 L 1320 302" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1915 568 L 1940 568 L 1940 395 L 1850 395" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1260 875 L 1290 875 L 1290 405 L 1320 405" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1260 1510 L 1285 1510 L 1285 445 L 1320 445" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1540 1185 L 1840 1185 L 1840 1500 L 1985 1500" fill="none" stroke="#0f766e" stroke-width="3"  marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1915 735 L 1950 735 L 1950 1470 L 1985 1470" fill="none" stroke="#0f766e" stroke-width="3"  marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1850 300 L 1985 300" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1850 345 L 1915 345 L 1915 690 L 1985 690" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1850 415 L 1895 415 L 1895 1055 L 1985 1055" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2210 469 L 2210 1380 L 2120 1380 L 2120 1410" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2350 1410 L 2350 530" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2210 829 L 2210 1385 L 2260 1385 L 2260 1410" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2465 1410 L 2465 890" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2210 1189 L 2210 1388 L 2415 1388 L 2415 1410" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2580 1410 L 2580 1250" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2745 395 L 2810 395 L 2810 705 L 2870 705" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2745 755 L 2870 755" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2745 1115 L 2810 1115 L 2810 790 L 2870 790" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3072 815 L 3072 880" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3072 1040 L 3072 1110" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3072 1275 L 3072 1350" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2870 960 L 2765 960 L 2765 1545 L 2745 1545" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2745 1585 L 2850 1585 L 2850 1000 L 2870 1000" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2870 1190 L 2785 1190 L 2785 1620 L 2745 1620" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2745 1650 L 2825 1650 L 2825 1240 L 2870 1240" fill="none" stroke="#0f766e" stroke-width="3" stroke-dasharray="12 10" marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1045 935 L 1045 1855 L 1320 1855" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2010 1855 L 2830 1855 L 2830 1440 L 2870 1440" fill="none" stroke="#475569" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2825 355 L 2700 355 L 2700 469" fill="none" stroke="#dc2626" stroke-width="3"  marker-end="url(#arrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2795 1685 L 2745 1595" fill="none" stroke="#0f766e" stroke-width="3"  marker-end="url(#tealArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2745 300 L 3340 300 L 3340 310 L 3400 310" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3275 1190 L 3340 1190 L 3340 515 L 3400 515" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3275 985 L 3340 985 L 3340 745 L 3400 745" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3275 1435 L 3340 1435 L 3340 1002 L 3400 1002" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1260 875 L 1290 875 L 1290 2070 L 3340 2070 L 3340 1252 L 3400 1252" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1915 568 L 1945 568 L 1945 2120 L 3345 2120 L 3345 1220 L 3400 1220" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2010 1855 L 3330 1855 L 3330 1252 L 3400 1252" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2010 1888 L 3355 1888 L 3355 1492 L 3400 1492" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3275 1475 L 3400 1518" fill="none" stroke="#ea580c" stroke-width="3"  marker-end="url(#orangeArrow)" stroke-linejoin="round" stroke-linecap="round"/>
+<g id="doctor-input">
+    <rect x="100" y="240" width="620" height="175" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3" />
+    <text x="128" y="282" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="128" dy="0">Doctor input</tspan></text>
+    <text x="128" y="346.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="128" dy="0">Creates patient profile: UC, Crohn's, or</tspan></text>
+  </g>
+<g id="lab-upload">
+    <rect x="100" y="500" width="620" height="190" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3" />
+    <text x="128" y="542" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="128" dy="0">Lab document upload</tspan></text>
+    <text x="128" y="606.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="128" dy="0">Doctor or patient uploads lab PDFs across 11</tspan><tspan x="128" dy="28.06">document types.</tspan></text>
+  </g>
+<g id="daily-journal">
+    <rect x="100" y="780" width="620" height="190" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3" />
+    <text x="128" y="822" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="128" dy="0">Patient daily journal</tspan></text>
+    <text x="128" y="886.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="128" dy="0">Conversational check-in chat: symptoms, meds</tspan><tspan x="128" dy="28.06">taken or missed, food, sleep, stool count,</tspan></text>
+  </g>
+<g id="clinical-kb">
+    <rect x="100" y="1080" width="620" height="250" rx="24" fill="#ccfbf1" stroke="#0f766e" stroke-width="3" />
+    <text x="128" y="1122" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="128" dy="0">Clinical knowledge base</tspan></text>
+    <text x="128" y="1186.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="128" dy="0">Built offline once: 13 NIH ODS nutrient fact</tspan><tspan x="128" dy="28.06">sheets, 15 FDA DailyMed drug labels, 14</tspan><tspan x="128" dy="28.06">peer-reviewed IBD correlation studies.</tspan></text>
+  </g>
+<g id="access-code">
+    <rect x="100" y="1445" width="620" height="135" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3" />
+    <text x="128" y="1487" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="128" dy="0">Patient access code entry</tspan></text>
+    
+  </g>
+<g id="profile-store">
+    <rect x="830" y="250" width="410" height="130" rx="24" fill="#f1f5f9" stroke="#64748b" stroke-width="3" />
+    <text x="858" y="292" font-size="27" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="858" dy="0">SQLite profile</tspan></text>
+    
+  </g>
+<g id="pdfplumber">
+    <rect x="830" y="520" width="210" height="125" rx="24" fill="#f1f5f9" stroke="#64748b" stroke-width="3" />
+    <text x="858" y="562" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="858" dy="0">pdfplumber</tspan></text>
+    
+  </g>
+<g id="llm-labs">
+    <rect x="1080" y="520" width="250" height="125" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="1108" y="562" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1108" dy="0">LLM lab</tspan><tspan x="1108" dy="29.28">extraction</tspan></text>
+    
+  </g>
+<g id="doctor-gate">
+    <rect x="1370" y="520" width="255" height="125" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="3" />
+    <text x="1398" y="562" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1398" dy="0">Doctor</tspan><tspan x="1398" dy="29.28">confirmation</tspan></text>
+    
+  </g>
+<g id="lab-store">
+    <rect x="1665" y="520" width="250" height="125" rx="24" fill="#f1f5f9" stroke="#64748b" stroke-width="3" />
+    <text x="1693" y="562" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1693" dy="0">SQLite labs</tspan></text>
+    
+  </g>
+<g id="patient-doc-index">
+    <rect x="1450" y="675" width="465" height="120" rx="24" fill="#ccfbf1" stroke="#0f766e" stroke-width="3" />
+    <text x="1478" y="717" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1478" dy="0">Azure AI Search: patient</tspan><tspan x="1478" dy="36.6">documents</tspan></text>
+    
+  </g>
+<g id="journal-store">
+    <rect x="830" y="815" width="430" height="120" rx="24" fill="#f1f5f9" stroke="#64748b" stroke-width="3" />
+    <text x="858" y="857" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="858" dy="0">SQLite journal_entries</tspan></text>
+    
+  </g>
+<g id="offline-chunk">
+    <rect x="830" y="1130" width="250" height="125" rx="24" fill="#ccfbf1" stroke="#0f766e" stroke-width="3" />
+    <text x="858" y="1172" font-size="24" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="858" dy="0">Offline</tspan><tspan x="858" dy="29.28">chunking</tspan></text>
+    
+  </g>
+<g id="general-lit">
+    <rect x="1120" y="1130" width="420" height="125" rx="24" fill="#ccfbf1" stroke="#0f766e" stroke-width="3" />
+    <text x="1148" y="1172" font-size="25" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1148" dy="0">Azure AI Search literature</tspan></text>
+    
+  </g>
+<g id="access-link">
+    <rect x="830" y="1460" width="430" height="100" rx="24" fill="#f1f5f9" stroke="#64748b" stroke-width="3" />
+    <text x="858" y="1502" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="858" dy="0">Profile link</tspan></text>
+    
+  </g>
+<g id="profile-prep">
+    <rect x="1320" y="225" width="530" height="240" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="1348" y="267" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1348" dy="0">Profile Preparation</tspan></text>
+    <text x="1348" y="331.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="1348" dy="0">Merges profile, confirmed labs,</tspan><tspan x="1348" dy="28.06">latest symptoms, medication</tspan><tspan x="1348" dy="28.06">normalization, and active</tspan><tspan x="1348" dy="28.06">inflammation flag from CRP and</tspan></text>
+  </g>
+<g id="foundry">
+    <rect x="1985" y="1410" width="760" height="275" rx="24" fill="#ccfbf1" stroke="#0f766e" stroke-width="3" />
+    <text x="2013" y="1452" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2013" dy="0">Foundry IQ Knowledge Retrieval</tspan></text>
+    <text x="2013" y="1516.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2013" dy="0">Azure AI Search agentic retrieval. Every query blends</tspan><tspan x="2013" dy="28.06">general clinical literature with that specific</tspan><tspan x="2013" dy="28.06">patient's uploaded documents using a per-patient</tspan><tspan x="2013" dy="28.06">filter.</tspan></text>
+  </g>
+<g id="stats">
+    <rect x="1320" y="1770" width="690" height="175" rx="24" fill="#ecfeff" stroke="#0891b2" stroke-width="3" />
+    <text x="1348" y="1812" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="1348" dy="0">Statistical Correlation Engine</tspan></text>
+    <text x="1348" y="1876.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="1348" dy="0">Separate non-LLM branch. Computes lagged Spearman</tspan></text>
+  </g>
+<g id="agent3">
+    <rect x="1985" y="260" width="760" height="270" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2013" y="302" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2013" dy="0">Agent 3: Deficiency Hypothesis</tspan></text>
+    <text x="2013" y="366.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2013" dy="0">Uses condition, symptoms, and lab values to propose</tspan><tspan x="2013" dy="28.06">deficiency candidates.</tspan></text>
+  </g>
+<g><g>
+    <rect x="2015" y="425" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2077" y="452.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2077" dy="0">PLAN</tspan></text>
+  </g><g>
+    <rect x="2157" y="425" width="124" height="44" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/>
+    <text x="2219" y="452.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2219" dy="0">RETRIEVE</tspan></text>
+  </g><g>
+    <rect x="2299" y="425" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2361" y="452.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2361" dy="0">ANALYZE</tspan></text>
+  </g><g>
+    <rect x="2441" y="425" width="124" height="44" rx="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="2503" y="452.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2503" dy="0">VERIFY</tspan></text>
+  </g><g>
+    <rect x="2583" y="425" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2645" y="452.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2645" dy="0">CONCLUDE</tspan></text>
+  </g><path d="M 2145 447 L 2161 447" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2153" y="493" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">goal</text><path d="M 2287 447 L 2303 447" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2295" y="493" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">query</text><path d="M 2429 447 L 2445 447" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2437" y="493" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">evidence</text><path d="M 2571 447 L 2587 447" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2579" y="493" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">kept facts</text></g>
+<g id="agent4">
+    <rect x="1985" y="620" width="760" height="270" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2013" y="662" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2013" dy="0">Agent 4: Medication Interaction</tspan></text>
+    <text x="2013" y="726.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2013" dy="0">Checks each medication for drug-nutrient depletions</tspan><tspan x="2013" dy="28.06">after brand-to-generic normalization.</tspan></text>
+  </g>
+<g><g>
+    <rect x="2015" y="785" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2077" y="812.6666666666666" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2077" dy="0">PLAN</tspan></text>
+  </g><g>
+    <rect x="2157" y="785" width="124" height="44" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/>
+    <text x="2219" y="812.6666666666666" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2219" dy="0">RETRIEVE</tspan></text>
+  </g><g>
+    <rect x="2299" y="785" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2361" y="812.6666666666666" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2361" dy="0">ANALYZE</tspan></text>
+  </g><g>
+    <rect x="2441" y="785" width="124" height="44" rx="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="2503" y="812.6666666666666" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2503" dy="0">VERIFY</tspan></text>
+  </g><g>
+    <rect x="2583" y="785" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2645" y="812.6666666666666" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2645" dy="0">CONCLUDE</tspan></text>
+  </g><path d="M 2145 807 L 2161 807" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2153" y="853" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">goal</text><path d="M 2287 807 L 2303 807" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2295" y="853" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">query</text><path d="M 2429 807 L 2445 807" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2437" y="853" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">evidence</text><path d="M 2571 807 L 2587 807" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2579" y="853" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">kept facts</text></g>
+<g id="agent5">
+    <rect x="1985" y="980" width="760" height="270" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2013" y="1022" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2013" dy="0">Agent 5: Dietary Gap</tspan></text>
+    <text x="2013" y="1086.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2013" dy="0">Maps each dietary restriction to likely nutrient gaps</tspan><tspan x="2013" dy="28.06">and evidence-backed concerns.</tspan></text>
+  </g>
+<g><g>
+    <rect x="2015" y="1145" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2077" y="1172.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2077" dy="0">PLAN</tspan></text>
+  </g><g>
+    <rect x="2157" y="1145" width="124" height="44" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/>
+    <text x="2219" y="1172.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2219" dy="0">RETRIEVE</tspan></text>
+  </g><g>
+    <rect x="2299" y="1145" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2361" y="1172.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2361" dy="0">ANALYZE</tspan></text>
+  </g><g>
+    <rect x="2441" y="1145" width="124" height="44" rx="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="2503" y="1172.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2503" dy="0">VERIFY</tspan></text>
+  </g><g>
+    <rect x="2583" y="1145" width="124" height="44" rx="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+    <text x="2645" y="1172.6666666666667" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2645" dy="0">CONCLUDE</tspan></text>
+  </g><path d="M 2145 1167 L 2161 1167" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2153" y="1213" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">goal</text><path d="M 2287 1167 L 2303 1167" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2295" y="1213" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">query</text><path d="M 2429 1167 L 2445 1167" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2437" y="1213" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">evidence</text><path d="M 2571 1167 L 2587 1167" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#tinyArrow)"/><text x="2579" y="1213" font-size="15" font-weight="700" fill="#475569" text-anchor="middle">kept facts</text></g>
+<g id="agent6">
+    <rect x="2870" y="650" width="405" height="165" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2898" y="692" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2898" dy="0">Agent 6: Synthesis</tspan></text>
+    <text x="2898" y="756.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2898" dy="0">Deterministic merge. Counts</tspan></text>
+  </g>
+<g>
+  <g>
+    <rect x="2900" y="765" width="86" height="36" rx="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="2943" y="787.6666666666666" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="2943" dy="0">RED</tspan></text>
+  </g>
+  <g>
+    <rect x="2998" y="765" width="112" height="36" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="3054" y="787.6666666666666" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3054" dy="0">YELLOW</tspan></text>
+  </g>
+  <g>
+    <rect x="3122" y="765" width="102" height="36" rx="16" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="3173" y="787.6666666666666" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle"><tspan x="3173" dy="0">GREEN</tspan></text>
+  </g>
+</g>
+<g id="agent7">
+    <rect x="2870" y="880" width="405" height="160" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2898" y="922" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2898" dy="0">Agent 7: Protocol</tspan></text>
+    <text x="2898" y="986.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2898" dy="0">For each RED or YELLOW</tspan></text>
+  </g>
+<g id="agent8">
+    <rect x="2870" y="1110" width="405" height="165" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2898" y="1152" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2898" dy="0">Agent 8: Safety</tspan></text>
+    <text x="2898" y="1216.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2898" dy="0">Red-flag escalation,</tspan></text>
+  </g>
+<g id="agent9">
+    <rect x="2870" y="1350" width="405" height="170" rx="24" fill="#f3e8ff" stroke="#7e22ce" stroke-width="3" />
+    <text x="2898" y="1392" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2898" dy="0">Agent 9: Doctor Guide</tspan></text>
+    <text x="2898" y="1456.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2898" dy="0">Prioritizes top issues into</tspan></text>
+  </g>
+<g id="verify-callout">
+    <rect x="2825" y="250" width="455" height="210" rx="24" fill="#fff7ed" stroke="#dc2626" stroke-width="4" />
+    <text x="2853" y="292" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2853" dy="0">Differentiator 1</tspan></text>
+    <text x="2853" y="356.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2853" dy="0">Adversarial VERIFY refuses</tspan><tspan x="2853" dy="28.06">ungrounded claims. Any finding</tspan><tspan x="2853" dy="28.06">not explicitly supported by</tspan></text>
+  </g>
+<g id="foundry-callout">
+    <rect x="2795" y="1600" width="500" height="190" rx="24" fill="#f0fdfa" stroke="#0f766e" stroke-width="4" />
+    <text x="2823" y="1642" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="2823" dy="0">Differentiator 2</tspan></text>
+    <text x="2823" y="1706.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="2823" dy="0">Foundry IQ blends two sources in</tspan><tspan x="2823" dy="28.06">every query: general clinical</tspan></text>
+  </g>
+<g id="trace-output">
+    <rect x="3400" y="245" width="690" height="130" rx="24" fill="#ffedd5" stroke="#ea580c" stroke-width="3" />
+    <text x="3428" y="287" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="3428" dy="0">Live streaming reasoning trace</tspan></text>
+    
+  </g>
+<g id="escalation-output">
+    <rect x="3400" y="455" width="690" height="125" rx="24" fill="#ffedd5" stroke="#ea580c" stroke-width="3" />
+    <text x="3428" y="497" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="3428" dy="0">Urgent escalation banner</tspan></text>
+    
+  </g>
+<g id="protocol-output">
+    <rect x="3400" y="665" width="690" height="185" rx="24" fill="#ffedd5" stroke="#ea580c" stroke-width="3" />
+    <text x="3428" y="707" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="3428" dy="0">Prioritized supplement protocol cards</tspan></text>
+    <text x="3428" y="771.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="3428" dy="0">RED, YELLOW, GREEN cards with dose, form, timing,</tspan><tspan x="3428" dy="28.06">cautions, and citations linked to knowledge</tspan></text>
+  </g>
+<g id="doctor-questions-output">
+    <rect x="3400" y="930" width="690" height="145" rx="24" fill="#ffedd5" stroke="#ea580c" stroke-width="3" />
+    <text x="3428" y="972" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="3428" dy="0">Doctor-visit questions and action list</tspan></text>
+    
+  </g>
+<g id="doctor-dashboard-output">
+    <rect x="3400" y="1160" width="690" height="185" rx="24" fill="#ffedd5" stroke="#ea580c" stroke-width="3" />
+    <text x="3428" y="1202" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="3428" dy="0">Doctor dashboard</tspan></text>
+    <text x="3428" y="1266.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="3428" dy="0">Correlation insights card, lab table, journal</tspan><tspan x="3428" dy="28.06">history, adherence stats.</tspan></text>
+  </g>
+<g id="patient-app-output">
+    <rect x="3400" y="1430" width="690" height="185" rx="24" fill="#ffedd5" stroke="#ea580c" stroke-width="3" />
+    <text x="3428" y="1472" font-size="30" font-weight="800" fill="#0f172a" text-anchor="start"><tspan x="3428" dy="0">Patient app</tspan></text>
+    <text x="3428" y="1536.6" font-size="23" font-weight="500" fill="#475569" text-anchor="start"><tspan x="3428" dy="0">Daily nudges, trend panel, doctor visit summary.</tspan></text>
+  </g>
+<g>
+    <rect x="750" y="395" width="320" height="90" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="910" y="424" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="910" dy="0">profile fields: condition,</tspan><tspan x="910" dy="22">medications, restrictions,</tspan><tspan x="910" dy="22">notes</tspan></text>
+  </g>
+<g>
+    <rect x="735" y="700" width="300" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="885" y="729" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="885" dy="0">uploaded lab PDFs, 11</tspan><tspan x="885" dy="22">document types</tspan></text>
+  </g>
+<g>
+    <rect x="980" y="445" width="170" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1065" y="474" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1065" dy="0">raw extracted</tspan><tspan x="1065" dy="22">text</tspan></text>
+  </g>
+<g>
+    <rect x="1325" y="445" width="190" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1420" y="474" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1420" dy="0">candidate lab</tspan><tspan x="1420" dy="22">values</tspan></text>
+  </g>
+<g>
+    <rect x="1608" y="445" width="250" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1733" y="474" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1733" dy="0">doctor-approved lab</tspan><tspan x="1733" dy="22">values only</tspan></text>
+  </g>
+<g>
+    <rect x="1125" y="690" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1267.5" y="719" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1267.5" dy="0">document text chunks</tspan><tspan x="1267.5" dy="22">for embedding</tspan></text>
+  </g>
+<g>
+    <rect x="735" y="965" width="235" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="852.5" y="994" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="852.5" dy="0">journal check-in</tspan><tspan x="852.5" dy="22">data</tspan></text>
+  </g>
+<g>
+    <rect x="735" y="1345" width="315" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="892.5" y="1374" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="892.5" dy="0">NIH, FDA, and IBD study</tspan><tspan x="892.5" dy="22">source text</tspan></text>
+  </g>
+<g>
+    <rect x="1085" y="1278" width="230" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1200" y="1307" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1200" dy="0">embedded clinical</tspan><tspan x="1200" dy="22">chunks</tspan></text>
+  </g>
+<g>
+    <rect x="735" y="1615" width="275" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="872.5" y="1644" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="872.5" dy="0">access code and</tspan><tspan x="872.5" dy="22">patient identity</tspan></text>
+  </g>
+<g>
+    <rect x="1085" y="395" width="185" height="46" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1177.5" y="424" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1177.5" dy="0">profile linkage</tspan></text>
+  </g>
+<g>
+    <rect x="1055" y="165" width="260" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1185" y="194" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1185" dy="0">doctor-created</tspan><tspan x="1185" dy="22">patient profile</tspan></text>
+  </g>
+<g>
+    <rect x="1865" y="445" width="210" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1970" y="474" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1970" dy="0">confirmed lab</tspan><tspan x="1970" dy="22">values</tspan></text>
+  </g>
+<g>
+    <rect x="1055" y="705" width="245" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1177.5" y="734" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1177.5" dy="0">latest symptoms and</tspan><tspan x="1177.5" dy="22">adherence</tspan></text>
+  </g>
+<g>
+    <rect x="1302" y="1550" width="215" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1409.5" y="1579" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1409.5" dy="0">linked patient</tspan><tspan x="1409.5" dy="22">profile</tspan></text>
+  </g>
+<g>
+    <rect x="1595" y="1205" width="255" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1722.5" y="1234" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1722.5" dy="0">general literature</tspan><tspan x="1722.5" dy="22">passages</tspan></text>
+  </g>
+<g>
+    <rect x="1640" y="820" width="300" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1790" y="849" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1790" dy="0">patient-filtered uploaded</tspan><tspan x="1790" dy="22">document passages</tspan></text>
+  </g>
+<g>
+    <rect x="1855" y="165" width="280" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1995" y="194" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1995" dy="0">condition + symptoms +</tspan><tspan x="1995" dy="22">lab values</tspan></text>
+  </g>
+<g>
+    <rect x="1810" y="510" width="250" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1935" y="539" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1935" dy="0">normalized</tspan><tspan x="1935" dy="22">medication list</tspan></text>
+  </g>
+<g>
+    <rect x="1660" y="900" width="300" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1810" y="929" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1810" dy="0">dietary restrictions +</tspan><tspan x="1810" dy="22">profile context</tspan></text>
+  </g>
+<g>
+    <rect x="2225" y="910" width="300" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2375" y="939" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2375" dy="0">deficiency evidence query</tspan><tspan x="2375" dy="22">+ patient ID filter</tspan></text>
+  </g>
+<g>
+    <rect x="2370" y="925" width="290" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2515" y="954" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2515" dy="0">ranked citations for</tspan><tspan x="2515" dy="22">deficiency findings</tspan></text>
+  </g>
+<g>
+    <rect x="2035" y="1055" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2177.5" y="1084" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2177.5" dy="0">drug-nutrient query +</tspan><tspan x="2177.5" dy="22">patient ID filter</tspan></text>
+  </g>
+<g>
+    <rect x="2485" y="1055" width="305" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2637.5" y="1084" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2637.5" dy="0">ranked citations for</tspan><tspan x="2637.5" dy="22">medication findings</tspan></text>
+  </g>
+<g>
+    <rect x="2038" y="1270" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2180.5" y="1299" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2180.5" dy="0">dietary gap query +</tspan><tspan x="2180.5" dy="22">patient ID filter</tspan></text>
+  </g>
+<g>
+    <rect x="2600" y="1294" width="300" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2750" y="1323" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2750" dy="0">ranked citations for</tspan><tspan x="2750" dy="22">restriction findings</tspan></text>
+  </g>
+<g>
+    <rect x="2760" y="505" width="270" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2895" y="534" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2895" dy="0">deficiency candidates</tspan><tspan x="2895" dy="22">+ evidence</tspan></text>
+  </g>
+<g>
+    <rect x="2748" y="790" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2890.5" y="819" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2890.5" dy="0">drug-nutrient depletion</tspan><tspan x="2890.5" dy="22">findings</tspan></text>
+  </g>
+<g>
+    <rect x="2760" y="960" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2902.5" y="989" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2902.5" dy="0">restriction-driven</tspan><tspan x="2902.5" dy="22">nutrient gaps</tspan></text>
+  </g>
+<g>
+    <rect x="3090" y="822" width="230" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3205" y="851" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3205" dy="0">RED and YELLOW</tspan><tspan x="3205" dy="22">nutrients</tspan></text>
+  </g>
+<g>
+    <rect x="3090" y="1050" width="220" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3200" y="1079" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3200" dy="0">dosing protocol</tspan><tspan x="3200" dy="22">drafts</tspan></text>
+  </g>
+<g>
+    <rect x="3090" y="1288" width="305" height="90" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3242.5" y="1317" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3242.5" dy="0">safe capped</tspan><tspan x="3242.5" dy="22">recommendations +</tspan><tspan x="3242.5" dy="22">escalations</tspan></text>
+  </g>
+<g>
+    <rect x="2640" y="945" width="220" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2750" y="974" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2750" dy="0">dosing evidence</tspan><tspan x="2750" dy="22">query</tspan></text>
+  </g>
+<g>
+    <rect x="2780" y="1330" width="260" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2910" y="1359" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2910" dy="0">dose, form, timing</tspan><tspan x="2910" dy="22">evidence</tspan></text>
+  </g>
+<g>
+    <rect x="2670" y="1180" width="265" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2802.5" y="1209" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2802.5" dy="0">upper limit and safety</tspan><tspan x="2802.5" dy="22">query</tspan></text>
+  </g>
+<g>
+    <rect x="2838" y="1450" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2980.5" y="1479" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2980.5" dy="0">ULs, cautions,</tspan><tspan x="2980.5" dy="22">contraindications</tspan></text>
+  </g>
+<g>
+    <rect x="1080" y="1705" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1222.5" y="1734" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="1222.5" dy="0">historical behaviors +</tspan><tspan x="1222.5" dy="22">symptoms</tspan></text>
+  </g>
+<g>
+    <rect x="2245" y="1795" width="320" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2405" y="1824" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2405" dy="0">lagged Spearman</tspan><tspan x="2405" dy="22">observational patterns</tspan></text>
+  </g>
+<g>
+    <rect x="2688" y="250" width="315" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2845.5" y="279" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2845.5" dy="0">grounding rule: keep only</tspan><tspan x="2845.5" dy="22">explicit support</tspan></text>
+  </g>
+<g>
+    <rect x="2770" y="1805" width="315" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2927.5" y="1834" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2927.5" dy="0">every retrieval query</tspan><tspan x="2927.5" dy="22">blends both sources</tspan></text>
+  </g>
+<g>
+    <rect x="2960" y="238" width="250" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3085" y="267" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3085" dy="0">agent step events</tspan><tspan x="3085" dy="22">stream</tspan></text>
+  </g>
+<g>
+    <rect x="3248" y="840" width="230" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3363" y="869" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3363" dy="0">red-flag symptom</tspan><tspan x="3363" dy="22">signal</tspan></text>
+  </g>
+<g>
+    <rect x="3260" y="900" width="270" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3395" y="929" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3395" dy="0">safe protocol cards +</tspan><tspan x="3395" dy="22">citations</tspan></text>
+  </g>
+<g>
+    <rect x="3235" y="1360" width="260" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3365" y="1389" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3365" dy="0">3 questions + patient</tspan><tspan x="3365" dy="22">actions</tspan></text>
+  </g>
+<g>
+    <rect x="2020" y="2010" width="285" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2162.5" y="2039" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2162.5" dy="0">journal history +</tspan><tspan x="2162.5" dy="22">adherence stats</tspan></text>
+  </g>
+<g>
+    <rect x="2520" y="2060" width="200" height="46" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2620" y="2089" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2620" dy="0">lab table values</tspan></text>
+  </g>
+<g>
+    <rect x="3055" y="1795" width="245" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3177.5" y="1824" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3177.5" dy="0">correlation insight</tspan><tspan x="3177.5" dy="22">card</tspan></text>
+  </g>
+<g>
+    <rect x="2795" y="1830" width="295" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2942.5" y="1859" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="2942.5" dy="0">daily nudge triggers +</tspan><tspan x="2942.5" dy="22">trend data</tspan></text>
+  </g>
+<g>
+    <rect x="3260" y="1515" width="225" height="68" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="3372.5" y="1544" font-size="18" font-weight="700" fill="#475569" text-anchor="middle"><tspan x="3372.5" dy="0">doctor visit</tspan><tspan x="3372.5" dy="22">summary</tspan></text>
+  </g>
+<text x="75" y="2305" font-size="20" font-weight="700" fill="#475569">All arrows are labeled with the data moving across them. Dashed teal arrows represent retrieval calls to Foundry IQ.</text>
+</svg>
